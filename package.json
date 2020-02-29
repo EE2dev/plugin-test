@@ -1,0 +1,36 @@
+{
+  "name": "d3-foo",
+  "version": "0.0.1",
+  "description": "{DESCRIPTION}",
+  "keywords": [
+    "d3",
+    "d3-module"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "build/d3-foo.js",
+  "jsnext:main": "index",
+  "homepage": "https://github.com/{USERNAME}/d3-foo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/{USERNAME}/d3-foo.git"
+  },
+  "scripts": {
+    "pretest": "rollup -c",
+    "test": "tape 'test/**/*-test.js'",
+    "prepublish": "npm run test && uglifyjs build/d3-foo.js -c -m -o build/d3-foo.min.js",
+    "postpublish": "zip -j build/d3-foo.zip -- LICENSE README.md build/d3-foo.js build/d3-foo.min.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "rollup": "^0.63.5",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.10.2",
+    "uglify-js": "^3.6.0"
+  }
+}
